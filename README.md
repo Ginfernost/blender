@@ -1,111 +1,98 @@
-# Creating a 3D Design from a 2D Map in Blender
+# Detailed Steps for Modeling in Blender from 2D to 3D
 
 ## Table of Contents
-- [Creating a 3D Design from a 2D Map in Blender](#creating-a-3d-design-from-a-2d-map-in-blender)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Goals](#goals)
-  - [Main References](#main-references)
-  - [Prerequisites](#prerequisites)
-  - [Downloading and Installing Blender](#downloading-and-installing-blender)
-  - [Installing Blender-OSM](#installing-blender-osm)
-  - [Installing Mitsuba-Blender](#installing-mitsuba-blender)
-  - [Importing 2D Map Data with Blender-OSM](#importing-2d-map-data-with-blender-osm)
-  - [Rendering the 3D Scene with Mitsuba](#rendering-the-3d-scene-with-mitsuba)
-  - [Conclusion](#conclusion)
+- [Introduction](#introduction)
+- [Goals](#goals)
+- [Prerequisites](#prerequisites)
+- [Modeling 3D Structures from 2D Maps](#modeling-3d-structures-from-2d-maps)
+  - [Preparing the Scene](#preparing-the-scene)
+  - [Creating the Base Mesh](#creating-the-base-mesh)
+  - [Extruding and Shaping Buildings](#extruding-and-shaping-buildings)
+  - [Adding Details](#adding-details)
+  - [Modifying Terrain](#modifying-terrain)
+  - [Applying Materials and Textures](#applying-materials-and-textures)
+- [Conclusion](#conclusion)
 
 ## Introduction
-This guide provides step-by-step instructions on creating a 3D design from a 2D map using Blender, leveraging the Blender-OSM and Mitsuba-Blender plugins. Blender-OSM allows you to import OpenStreetMap (OSM) data into Blender, while the Mitsuba-Blender plugin enables the rendering of these scenes using the Mitsuba renderer.
+This guide provides detailed instructions on transforming 2D map data into 3D models using Blender. The steps focus on modeling and designing within Blender to create accurate and detailed 3D structures.
 
 ## Goals
-- To enable users to transform 2D map data into 3D models in Blender.
-- To guide users in installing and utilizing the Blender-OSM and Mitsuba-Blender plugins.
-
-## Main References
-- [YouTube Tutorial on Sionna NVIDIA Integration](https://www.youtube.com/watch?v=7xHLDxUaQ7c)
-- [Mitsuba-Blender GitHub Repository](https://github.com/mitsuba-renderer/mitsuba-blender)
-- [Blender-OSM Product Page](https://prochitecture.gumroad.com/l/blender-osm)
+- To guide users in creating 3D models from 2D map data in Blender.
+- To provide detailed, step-by-step instructions for modeling buildings and terrain.
 
 ## Prerequisites
-- A computer with internet access.
+- A computer with Blender installed.
 - Basic knowledge of Blender’s interface and functionalities.
 
-## Downloading and Installing Blender
-1. **Download Blender**:
-   - Go to the official Blender website: [https://www.blender.org/download/](https://www.blender.org/download/).
-   - Choose the appropriate version for your operating system (Windows, macOS, or Linux).
-   - Click the `Download` button and save the installer to your computer.
+## Modeling 3D Structures from 2D Maps
 
-2. **Install Blender**:
-   - Run the downloaded installer and follow the on-screen instructions to complete the installation.
-   - Once installed, launch Blender by double-clicking the Blender icon on your desktop or from the Start menu (Windows) or Applications folder (macOS).
+### Preparing the Scene
+1. **Import 2D Map Data**:
+   - Import your 2D map data into Blender. This data will serve as the base for your 3D modeling.
 
-## Installing Blender-OSM
-1. **Purchase and Download Blender-OSM**:
-   - Visit the [Blender-OSM Product Page](https://prochitecture.gumroad.com/l/blender-osm) to purchase and download the plugin.
-   - Save the downloaded zip file to your computer.
+2. **Align View and Scale**:
+   - Ensure the imported map data is aligned and scaled correctly in the 3D viewport.
+   - Use the `N` key to open the side panel and check the location, rotation, and scale properties.
 
-2. **Install Blender-OSM in Blender**:
-   - Open Blender and go to the `Edit` menu at the top, then select `Preferences`.
-   - In the Preferences window, click on the `Add-ons` tab on the left.
-   - Click the `Install` button at the top right and navigate to the downloaded Blender-OSM zip file.
-   - Select the file and click `Install Add-on`.
-   - Enable the add-on by checking the box next to it in the list.
+### Creating the Base Mesh
+1. **Select the Object**:
+   - In the `3D Viewport`, right-click on the object (building or terrain) imported from the 2D map to select it.
 
-## Installing Mitsuba-Blender
-1. **Download Mitsuba-Blender**:
-   - Go to the [Mitsuba-Blender GitHub Repository](https://github.com/mitsuba-renderer/mitsuba-blender) and download the latest version as a zip file.
-   - Save the zip file to your computer.
+2. **Enter Edit Mode**:
+   - Press `Tab` to switch from Object Mode to Edit Mode. This allows you to modify the geometry of the selected object.
 
-2. **Install Mitsuba-Blender in Blender**:
-   - Follow the same steps as for installing Blender-OSM:
-     - Go to `Edit` > `Preferences` in Blender.
-     - Click on the `Add-ons` tab and then the `Install` button.
-     - Navigate to the downloaded Mitsuba-Blender zip file, select it, and click `Install Add-on`.
-     - Enable the add-on by checking the box next to it.
+### Extruding and Shaping Buildings
+1. **Extrude Faces**:
+   - Select the top face of the building using `Face Select` mode (press `3` on your keyboard).
+   - Press `E` to extrude the face upwards to create the height of the building.
+   - Move the mouse to adjust the height and click to confirm.
 
-## Importing 2D Map Data with Blender-OSM
-1. **Open Blender**:
-   - Launch Blender if it’s not already open.
+2. **Shape the Building**:
+   - Use the `G` key to grab and move vertices, edges, or faces to shape the building accurately.
+   - Press `S` to scale and `R` to rotate elements as needed.
 
-2. **Access Blender-OSM**:
-   - In the `3D Viewport`, look to the right sidebar.
-   - If the sidebar is not visible, press `N` to open it.
-   - Find and click the `OSM` tab to access the plugin.
+### Adding Details
+1. **Inset Faces**:
+   - Select the face where you want to add detail, press `I`, and adjust the inset by moving the mouse.
+   - Use this technique to create windows, doors, and other architectural features.
 
-3. **Select the Area**:
-   - Click the `Select` button within the OSM tab.
-   - A map window will appear.
-   - Navigate and zoom into your desired area on the map.
-   - Draw a rectangle around the area by clicking and dragging.
+2. **Loop Cut and Slide**:
+   - Press `Ctrl+R` to activate the Loop Cut tool.
+   - Move the mouse to position the cut, then click to place it.
+   - Adjust the cut position by moving the mouse and click again to confirm.
 
-4. **Copy Coordinates**:
-   - After selecting the area, the coordinates are usually copied automatically. If not, click the `Copy` button.
+3. **Bevel Edges**:
+   - Select the edges you want to bevel in Edit Mode.
+   - Press `Ctrl+B` to activate the Bevel tool and move the mouse to adjust the bevel amount. Scroll the mouse wheel to add more segments for a smoother bevel.
 
-5. **Paste Coordinates**:
-   - Go back to the OSM import panel in Blender.
-   - Paste the copied coordinates into the appropriate fields (latitude and longitude bounds).
+### Modifying Terrain
+1. **Select Terrain Object**:
+   - Select the terrain object imported from the 2D map data.
 
-6. **Import Data**:
-   - Click the `Import` button and wait for the data to load into Blender. This may take some time depending on the size and complexity of the area.
-   
-7. **Adjust Imported Data**:
-   - Use Blender’s modeling tools to adjust buildings, roads, and terrain as needed.
+2. **Enter Edit Mode**:
+   - Press `Tab` to switch to Edit Mode.
 
-## Rendering the 3D Scene with Mitsuba
-1. **Prepare for Export**:
-   - Ensure the coordinate system is set to Y Forward and Z Up.
-   - Enable export options to include IDs for material properties.
+3. **Use Proportional Editing**:
+   - Press `O` to enable Proportional Editing.
+   - Select a vertex, edge, or face and move it to adjust the terrain smoothly. Use the scroll wheel to adjust the influence radius.
 
-2. **Export Scene**:
-   - Use Mitsuba-Blender to export the scene to an XML file and a meshes folder.
-   - In Blender, go to `File` > `Export` and select the Mitsuba format.
-   - Choose the export location and file name, then click `Export`.
+### Applying Materials and Textures
+1. **Switch to Shading Workspace**:
+   - Click on the `Shading` tab at the top of Blender to switch to the Shading workspace.
 
-3. **Render Scene**:
-   - Load the exported scene into Mitsuba for rendering.
-   - Open Mitsuba, navigate to the exported XML file, and load it.
-   - Adjust rendering settings as needed and start the render.
+2. **Create New Material**:
+   - Select the object you want to apply a material to.
+   - In the `Material Properties` tab, click `New` to create a new material.
+
+3. **Adjust Material Properties**:
+   - Use the shader nodes to adjust properties like color, roughness, and metallic.
+   - Connect image textures to the shader nodes for detailed texturing.
+
+4. **Apply Textures**:
+   - Open the `UV Editing` workspace.
+   - Unwrap the object by selecting all faces (`A` key) and pressing `U` to open the UV Mapping menu.
+   - Choose an appropriate unwrap method and adjust the UV layout.
+   - Assign textures to the material by linking image texture nodes in the shader editor.
 
 ## Conclusion
-By following this detailed guide, you can transform 2D map data into detailed 3D models and render them using the Mitsuba renderer within Blender. This process is ideal for creating accurate and visually compelling 3D representations of real-world environments.
+By following this detailed guide, you can effectively transform 2D map data into detailed 3D models in Blender. These steps focus on modeling techniques to create accurate and visually compelling 3D representations of real-world environments.
