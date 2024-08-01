@@ -12,7 +12,7 @@
 - [Conclusion](#conclusion)
 
 ## Introduction
-This guide provides detailed instructions on transforming 2D image designs into 3D models using Blender. The focus is on creating walls, adding holes for doors, and modeling doors.
+This guide provides detailed instructions on transforming 2D image designs into 3D models using Blender. The focus is on creating walls, adding holes for doors using the Boolean modifier, and modeling doors.
 
 ## Goals
 - To guide users in creating 3D models from 2D image designs in Blender.
@@ -53,14 +53,19 @@ This guide provides detailed instructions on transforming 2D image designs into 
    - Press `E` to extrude them upwards, creating the height of the walls. Use the mouse to adjust the height and click to confirm.
 
 ### Creating Doors and Windows
-1. **Select Faces for Doors/Windows**:
-   - In Edit Mode, select the faces where you want to create holes for doors and windows.
+1. **Create Door/Window Object**:
+   - Add a new cube (`Shift+A` > `Mesh > Cube`) and position it where the door or window should be.
+   - Scale the cube to match the dimensions of the door or window by pressing `S` and adjusting the size. Use `X`, `Y`, or `Z` after `S` to constrain scaling to a specific axis.
 
-2. **Inset Faces**:
-   - Press `I` to inset the selected faces, creating a smaller face inside the original face. Adjust the inset by moving the mouse and click to confirm.
+2. **Apply Boolean Modifier**:
+   - Select the wall object and go to the `Modifier Properties` tab.
+   - Click `Add Modifier` and select `Boolean`.
+   - Set the `Operation` to `Difference`.
+   - In the `Object` field, select the cube you created for the door or window.
+   - Click `Apply` to apply the modifier.
 
-3. **Extrude Inwards**:
-   - Press `E` to extrude the inset faces inwards to create the hole for the door or window. Move the mouse to adjust the depth and click to confirm.
+3. **Remove Boolean Object**:
+   - Select the cube used for the Boolean operation and delete it by pressing `X` and confirming with `Delete`.
 
 4. **Create Door Object**:
    - Add a new plane (`Shift+A` > `Mesh > Plane`) and position it where the door should be.
@@ -68,8 +73,4 @@ This guide provides detailed instructions on transforming 2D image designs into 
 
 5. **Detailing the Door**:
    - Enter Edit Mode for the door object.
-   - Use the loop cut (`Ctrl+R`) and knife tool (`K`) to add details like panels.
-   - Bevel edges (`Ctrl+B`) to smooth out corners and create a realistic door appearance.
-
-## Conclusion
-By following these detailed steps, you can transform a 2D image design into a 3D model in Blender. These instructions focus on modeling walls, creating holes for doors and windows, and detailing doors to create accurate and visually compelling 3D structures.
+   - Use the loop cut
