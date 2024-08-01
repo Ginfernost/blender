@@ -51,26 +51,4 @@ This guide provides detailed instructions on transforming 2D image designs into 
 3. **Extrude Walls**:
    - Select the faces that represent the walls.
    - Press `E` to extrude them upwards, creating the height of the walls. Use the mouse to adjust the height and click to confirm.
-
-### Creating Doors and Windows
-1. **Create Door/Window Object**:
-   - Add a new cube (`Shift+A` > `Mesh > Cube`) and position it where the door or window should be.
-   - Scale the cube to match the dimensions of the door or window by pressing `S` and adjusting the size. Use `X`, `Y`, or `Z` after `S` to constrain scaling to a specific axis.
-
-2. **Apply Boolean Modifier**:
-   - Select the wall object and go to the `Modifier Properties` tab.
-   - Click `Add Modifier` and select `Boolean`.
-   - Set the `Operation` to `Difference`.
-   - In the `Object` field, select the cube you created for the door or window.
-   - Click `Apply` to apply the modifier.
-
-3. **Remove Boolean Object**:
-   - Select the cube used for the Boolean operation and delete it by pressing `X` and confirming with `Delete`.
-
-4. **Create Door Object**:
-   - Add a new plane (`Shift+A` > `Mesh > Plane`) and position it where the door should be.
-   - Scale the plane to match the dimensions of the door and extrude it (`E`) to give it thickness.
-
-5. **Detailing the Door**:
-   - Enter Edit Mode for the door object.
-   - Use the loop cut
+   - For precision, press `Z` after `
